@@ -28,7 +28,7 @@ class OmekaAPIClient(object):
         self.s.mount('http://', HTTPAdapter(max_retries=retries))
         self.s.mount('https://', HTTPAdapter(max_retries=retries))
 
-    def clear_cache():
+    def clear_cache(self):
         self.s.cache.clear()
 
     def process_response(self, response):
