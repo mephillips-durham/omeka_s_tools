@@ -78,7 +78,7 @@ class OmekaAPIClient(object):
         * `total_results` - number of matching resources
         * `results` - a list of dicts, each containing a JSON-LD formatted representation of a resource
         '''
-        response = self.s.get(f'{self.api_url}/{resource_type}/', params=kwargs)
+        response = self.s.get(f'{self.api_url}/{resource_type}', params=kwargs)
         data = self.process_response(response)
         return {'total_results': int(response.headers['Omeka-S-Total-Results']), 'results': data}
 
